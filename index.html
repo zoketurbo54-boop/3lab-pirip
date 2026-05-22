@@ -78,9 +78,23 @@
     </div>
   </section>
 
+  <section class="subscribe-section">
+    <div class="container subscribe-box">
+      <div>
+        <h2>Новости рынка CS2</h2>
+        <p>Подпишитесь на рассылку — новые скины, акции и гайды по трейду.</p>
+      </div>
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <button type="submit" class="btn btn-buy">Подписаться</button>
+      </form>
+    </div>
+  </section>
+
   <div id="site-footer"></div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
-  <script>initLayout("home"); initHome();</script>
+  <script src="js/forms.js"></script>
+  <script>initLayout("home"); initHome(); initSubscribeForm();</script>
 </body>
 </html>

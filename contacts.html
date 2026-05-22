@@ -31,11 +31,11 @@
 
     <div class="contact-card">
       <h3>Форма обратной связи</h3>
-      <form class="contact-form" onsubmit="event.preventDefault();showToast('Сообщение отправлено. Ответим в течение 15 минут.');">
-        <input type="text" placeholder="Ваше имя" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Тема">
-        <textarea placeholder="Сообщение..." required></textarea>
+      <form class="contact-form" id="contactForm" novalidate>
+        <input type="text" name="name" placeholder="Ваше имя" required minlength="2">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Тема">
+        <textarea name="message" placeholder="Сообщение..." required minlength="10"></textarea>
         <button type="submit" class="btn btn-buy">Отправить</button>
       </form>
     </div>
@@ -44,6 +44,7 @@
   <div id="site-footer"></div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
-  <script>initLayout("contacts");</script>
+  <script src="js/forms.js"></script>
+  <script>initLayout("contacts"); initContactForm();</script>
 </body>
 </html>

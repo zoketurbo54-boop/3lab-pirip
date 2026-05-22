@@ -297,6 +297,7 @@ function initCatalog() {
     .forEach(el => el?.addEventListener("input", applyFilters));
 
   applyFilters();
+  initCatalogFilterForm(applyFilters);
 }
 
 function initSkinPage() {
@@ -388,19 +389,27 @@ function initCart() {
     <div class="cart-layout">
       <div class="cart-items">${itemsHTML}</div>
       <aside class="checkout-panel">
-        <h2>Оформление заказа</h2>
-        <div class="checkout-row"><span>Товаров:</span><span>${cart.reduce((s,i)=>s+i.qty,0)}</span></div>
-        <div class="checkout-row total"><span>Итого:</span><span>${formatPrice(total)}</span></div>
-        <h3>Способ доставки</h3>
-        <label class="radio-card"><input type="radio" name="delivery" checked> Instant Trade — мгновенный обмен</label>
-        <label class="radio-card"><input type="radio" name="delivery"> Классический обмен — до 15 мин</label>
-        <h3>Оплата</h3>
-        <label class="radio-card"><input type="radio" name="pay" checked> Банковская карта</label>
-        <label class="radio-card"><input type="radio" name="pay"> Баланс UltraBot</label>
-        <label class="radio-card"><input type="radio" name="pay"> Криптовалюта</label>
-        <button class="btn btn-buy btn-lg btn-full" onclick="showToast('Заказ оформлен. Trade offer отправлен в Steam.')">Оформить заказ</button>
+        <form id="checkoutForm" novalidate>
+          <h2>Оформление заказа</h2>
+          <div class="checkout-row"><span>Товаров:</span><span>${cart.reduce((s,i)=>s+i.qty,0)}</span></div>
+          <div class="checkout-row total"><span>Итого:</span><span>${formatPrice(total)}</span></div>
+          <div class="filter-group" style="margin-top:12px">
+            <label for="steamId">Steam Trade URL / ник</label>
+            <input type="text" id="steamId" name="steamId" placeholder="https://steamcommunity.com/tradeoffer/new/..." required>
+          </div>
+          <h3>Способ доставки</h3>
+          <label class="radio-card"><input type="radio" name="delivery" value="instant" checked> Instant Trade — мгновенный обмен</label>
+          <label class="radio-card"><input type="radio" name="delivery" value="classic"> Классический обмен — до 15 мин</label>
+          <h3>Оплата</h3>
+          <label class="radio-card"><input type="radio" name="payment" value="card" checked> Банковская карта</label>
+          <label class="radio-card"><input type="radio" name="payment" value="balance"> Баланс UltraBot</label>
+          <label class="radio-card"><input type="radio" name="payment" value="crypto"> Криптовалюта</label>
+          <button type="submit" class="btn btn-buy btn-lg btn-full">Оформить заказ</button>
+        </form>
       </aside>
     </div>`;
+
+  initCheckoutForm();
 }
 
 function initAccount() {
@@ -423,9 +432,14 @@ function initAccount() {
       </aside>
       <div class="account-main">
         <div class="balance-card">
-          <span>Баланс</span>
-          <strong>$1 240.50</strong>
-          <button class="btn btn-buy btn-sm">Пополнить</button>
+          <div>
+            <span>Баланс</span>
+            <strong>$1 240.50</strong>
+          </div>
+          <form class="deposit-form" id="depositForm" novalidate>
+            <input type="number" name="amount" min="1" max="10000" step="1" placeholder="Сумма $" required>
+            <button type="submit" class="btn btn-buy btn-sm">Пополнить</button>
+          </form>
         </div>
         <h2>История сделок</h2>
         <table class="data-table">
@@ -458,6 +472,8 @@ function initAccount() {
         </div>
       </div>
     </div>`;
+
+  initDepositForm();
 }
 
 function initBlog() {

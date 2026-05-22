@@ -16,18 +16,19 @@
 
   <div class="container catalog-layout">
     <aside class="filters">
+      <form id="catalogFilterForm">
       <h3>Фильтры</h3>
       <div class="filter-cats">
-        <button class="cat-filter active" data-cat="">Все</button>
-        <button class="cat-filter" data-cat="knives">Ножи</button>
-        <button class="cat-filter" data-cat="gloves">Перчатки</button>
-        <button class="cat-filter" data-cat="rifles">M4/AK</button>
-        <button class="cat-filter" data-cat="snipers">AWP</button>
-        <button class="cat-filter" data-cat="pistols">Пистолеты</button>
+        <button type="button" class="cat-filter active" data-cat="">Все</button>
+        <button type="button" class="cat-filter" data-cat="knives">Ножи</button>
+        <button type="button" class="cat-filter" data-cat="gloves">Перчатки</button>
+        <button type="button" class="cat-filter" data-cat="rifles">M4/AK</button>
+        <button type="button" class="cat-filter" data-cat="snipers">AWP</button>
+        <button type="button" class="cat-filter" data-cat="pistols">Пистолеты</button>
       </div>
       <div class="filter-group">
-        <label>Поиск</label>
-        <input type="text" id="filterSearch" placeholder="Название скина...">
+        <label for="filterSearch">Поиск</label>
+        <input type="text" id="filterSearch" name="search" placeholder="Название скина...">
       </div>
       <div class="filter-group">
         <label>Оружие</label>
@@ -78,8 +79,13 @@
         <input type="range" id="filterFloat" min="0" max="1" step="0.01" value="1">
       </div>
       <label class="filter-check">
-        <input type="checkbox" id="filterStock"> Только в наличии
+        <input type="checkbox" id="filterStock" name="inStock"> Только в наличии
       </label>
+      <div class="filter-actions">
+        <button type="submit" class="btn btn-buy btn-sm">Применить</button>
+        <button type="reset" class="btn btn-ghost btn-sm">Сбросить</button>
+      </div>
+      </form>
     </aside>
 
     <div>
@@ -93,6 +99,7 @@
   <div id="site-footer"></div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
   <script>initLayout("catalog"); initCatalog();</script>
 </body>
 </html>
