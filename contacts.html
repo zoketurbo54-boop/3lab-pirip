@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты | UltraBot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-header">
+    <h1>Контакты</h1>
+    <p>Напишите в поддержку — ответим в рабочее время</p>
+  </div>
+
+  <div class="container contact-grid">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>help@ultrabot.gg</p>
+      <p>support@ultrabot.gg</p>
+
+      <h3 style="margin-top:20px">Мессенджеры</h3>
+      <p>Telegram: @ultrabot_support</p>
+      <p>Discord: UltraBot Community</p>
+
+      <h3 style="margin-top:20px">Часы работы</h3>
+      <p>Ежедневно, 10:00–22:00 (МСК)</p>
+      <p>Среднее время ответа — 15 минут</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Форма обратной связи</h3>
+      <form class="contact-form" onsubmit="event.preventDefault();showToast('Сообщение отправлено. Ответим в течение 15 минут.');">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Тема">
+        <textarea placeholder="Сообщение..." required></textarea>
+        <button type="submit" class="btn btn-buy">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>initLayout("contacts");</script>
+</body>
+</html>

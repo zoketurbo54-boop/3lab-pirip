@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог скинов | UltraBot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-header">
+    <h1>Каталог скинов</h1>
+    <p>Фильтрация по оружию, редкости, float, цене и наличию на складе</p>
+  </div>
+
+  <div class="container catalog-layout">
+    <aside class="filters">
+      <h3>Фильтры</h3>
+      <div class="filter-cats">
+        <button class="cat-filter active" data-cat="">Все</button>
+        <button class="cat-filter" data-cat="knives">Ножи</button>
+        <button class="cat-filter" data-cat="gloves">Перчатки</button>
+        <button class="cat-filter" data-cat="rifles">M4/AK</button>
+        <button class="cat-filter" data-cat="snipers">AWP</button>
+        <button class="cat-filter" data-cat="pistols">Пистолеты</button>
+      </div>
+      <div class="filter-group">
+        <label>Поиск</label>
+        <input type="text" id="filterSearch" placeholder="Название скина...">
+      </div>
+      <div class="filter-group">
+        <label>Оружие</label>
+        <select id="filterWeapon">
+          <option value="">Все</option>
+          <option>Karambit</option>
+          <option>M9 Bayonet</option>
+          <option>Butterfly</option>
+          <option>Skeleton</option>
+          <option>AK-47</option>
+          <option>M4A4</option>
+          <option>M4A1-S</option>
+          <option>AWP</option>
+          <option>Desert Eagle</option>
+          <option>USP-S</option>
+          <option>Glock-18</option>
+          <option>Перчатки</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Редкость</label>
+        <select id="filterRarity">
+          <option value="">Все</option>
+          <option>Contraband</option>
+          <option>Covert</option>
+          <option>Extraordinary</option>
+          <option>Classified</option>
+          <option>Restricted</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Качество</label>
+        <select id="filterQuality">
+          <option value="">Все</option>
+          <option>FN</option>
+          <option>MW</option>
+          <option>FT</option>
+          <option>WW</option>
+          <option>BS</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Цена <span id="priceLabel">до $10 000</span></label>
+        <input type="range" id="filterPrice" min="50" max="10000" step="50" value="10000">
+      </div>
+      <div class="filter-group">
+        <label>Float <span id="floatLabel">до 1.00</span></label>
+        <input type="range" id="filterFloat" min="0" max="1" step="0.01" value="1">
+      </div>
+      <label class="filter-check">
+        <input type="checkbox" id="filterStock"> Только в наличии
+      </label>
+    </aside>
+
+    <div>
+      <div class="catalog-toolbar">
+        <span>Найдено: <strong id="resultsCount">0</strong> скинов</span>
+      </div>
+      <div class="skins-grid" id="catalogGrid"></div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>initLayout("catalog"); initCatalog();</script>
+</body>
+</html>
