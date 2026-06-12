@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraBot — маркетплейс скинов CS2</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .landing-header .header-inner { justify-content: flex-start; }
+    .landing-card { pointer-events: none; }
+    .landing-card .skin-price-row .btn { display: none; }
+    .landing-card h3 a, .category-card { pointer-events: none; cursor: default; }
+    .category-card:hover { transform: none; border-color: var(--border); }
+    .skin-card:hover { transform: none; }
+    .hero-showcase-head .link-arrow { display: none; }
+    .hero-mini { pointer-events: none; cursor: default; }
+    .hero-actions { display: none; }
+    .section-header .link-arrow { display: none; }
+    .landing-footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 20px 0; margin-top: 24px; text-align: center;
+      font-size: 12px; color: var(--muted2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Поддержка: help@ultrabot.gg · Пн–Вс 10:00–22:00</span>
+      <div class="topbar-status">
+        <span class="status-dot"></span>
+        <span>Steam работает</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="header landing-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">UB</span>
+        <span class="logo-text">UltraBot</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-label">Маркетплейс CS2</span>
+        <h1>Покупай и продавай скины быстро и безопасно</h1>
+        <p>Каталог с фильтрами по float и паттерну, мгновенная выдача через Steam Trade Offer. Карты, баланс, криптовалюта.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>16+</strong><span>скинов в каталоге</span></div>
+          <div class="hero-stat"><strong>2 400+</strong><span>сделок за месяц</span></div>
+          <div class="hero-stat"><strong>~2 мин</strong><span>средняя выдача</span></div>
+        </div>
+      </div>
+      <div class="hero-showcase" id="heroShowcase"></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="trust-strip">
+      <div class="trust-item">
+        <h4>Instant Trade</h4>
+        <p>Trade offer отправляется сразу после оплаты</p>
+      </div>
+      <div class="trust-item">
+        <h4>Гарантия сделки</h4>
+        <p>Возврат, если скин не доставлен за 30 минут</p>
+      </div>
+      <div class="trust-item">
+        <h4>Float и паттерн</h4>
+        <p>Полная информация о каждом лоте</p>
+      </div>
+      <div class="trust-item">
+        <h4>3 способа оплаты</h4>
+        <p>Карта, баланс UltraBot, криптовалюта</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Категории</h2>
+      </div>
+      <div class="categories-grid" id="categories"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Акции и скидки</h2>
+      </div>
+      <div class="skins-grid" id="hotSkins"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Популярное за неделю</h2>
+      </div>
+      <div class="skins-grid" id="topSkins"></div>
+    </div>
+  </section>
+
+  <section class="subscribe-section">
+    <div class="container subscribe-box">
+      <div>
+        <h2>Новости рынка CS2</h2>
+        <p>Подпишитесь на рассылку — новые скины, акции и гайды по трейду.</p>
+      </div>
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <button type="submit" class="btn btn-buy">Подписаться</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <div class="container">© 2026 UltraBot · Александр Сафронов</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>
